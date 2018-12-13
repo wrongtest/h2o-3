@@ -68,10 +68,10 @@ public class LeaderboardTest extends water.TestUtil {
       parms._response_column = "CAPSULE";
       GBM job = new GBM(parms);
       model = job.trainModel().get();
-      
+
       lb = Leaderboard.getOrMakeLeaderboard("dummy_rank_tsv", ufb, null, "mae");
       lb.addModel(model);
-      Assert.assertEquals("Error\n[0.19959320678410908, 0.44675855535636816, 0.19959320678410908, 0.3448260574357465, 0.31468498072970547]\n", lb.rankTsv()); 
+      Assert.assertEquals("Error\n[0.19959320678410908, 0.44675855535636816, 0.19959320678410908, 0.3448260574357465, 0.31468498072970547]\n", lb.rankTsv());
     } finally {
       if (lb != null){
         lb.deleteWithChildren();
