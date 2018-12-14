@@ -1,3 +1,7 @@
+if (rebquire(xgboost)) {
+  stop("xboost package not available, please run `install.packages('xgboost')`")
+}
+
 library(h2o)
 library(xgboost)
 
